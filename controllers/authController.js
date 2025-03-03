@@ -25,13 +25,12 @@ export const registerController = async (req, res) => {
         message: "Email already exist Please login",
       });
     }
-    const user =await userModel.create({name,email,password})
+    const user = await userModel.create({ name, email, password });
     res.status(201).send({
-        success:true,
-        message:'User created successfully',
-        user,
-    })
-
+      success: true,
+      message: "User created successfully",
+      user,
+    });
   } catch (error) {
     console.log(error);
     res.status(400).send({
